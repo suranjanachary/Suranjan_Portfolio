@@ -1,0 +1,113 @@
+<div class="portfolio-container">
+  <!-- Sidebar (Hidden on Desktop) -->
+  <div class="sidebar" [class.open]="isSidebarOpen">
+    <button class="close-btn" (click)="toggleSidebar()">✖</button>
+    <ul>
+      <li><a href="#about" (click)="toggleSidebar()">About Me</a></li>
+      <li><a href="#skills" (click)="toggleSidebar()">Skills</a></li>
+      <li><a href="#projects" (click)="toggleSidebar()">Projects</a></li>
+      <li><a href="#resume" (click)="toggleSidebar()">Resume</a></li>
+      <li><a href="#contact" (click)="toggleSidebar()">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Navbar (Hidden on Mobile) -->
+  <nav class="navbar">
+    <div class="logo">
+      <span class="logo-text">Suranjan Achary</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#resume">Resume</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="menu-btn" (click)="toggleSidebar()">☰</button>
+  </nav>
+  
+
+  <!-- About Me Section -->
+ <!-- About Me Section -->
+<section id="about" class="section about">
+  <div class="about-content">
+    <img src="https://suranjan-achary-portfolio.netlify.app/ProPic.JPG" alt="My Photo" class="profile-pic" />
+    <div>
+      <h1>Hello 👋, I'm <span class="highlight">Suranjan Achary</span></h1>
+      <h3>(Full Stack Web Developer)</h3>
+      <p>
+        A passionate and results-driven Software Developer with 2 years of experience specializing in Java, Spring Boot, Angular, SQL, and REST APIs. 
+        <br>  
+        Proficient in developing scalable backend solutions and dynamic front-end interfaces, ensuring seamless user experiences. Skilled in problem-solving, system design, and full-stack application development, with a strong understanding of modern software architectures. 
+        <br>  
+        Always eager to learn, adapt, and innovate, I thrive in collaborative environments and am committed to building efficient, user-centric applications. Looking forward to taking on new challenges and expanding my expertise in cutting-edge technologies.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Skills Section -->
+  <section id="skills" class="section skills">
+    <h2>Skills & Technologies</h2>
+    <div class="skill-list">
+      <span><i class="devicon-java-plain"></i> Java</span>
+      <span><i class="devicon-angularjs-plain"></i> Angular</span>
+      <span><i class="devicon-html5-plain"></i> HTML</span>
+      <span><i class="devicon-css3-plain"></i> CSS</span>
+      <span><i class="devicon-javascript-plain"></i> JavaScript</span>
+      <span><i class="devicon-spring-plain"></i> Spring Boot</span>
+      <span><i class="devicon-hibernate-plain"></i> Hibernate</span>
+      <span><i class="fa-solid fa-database"></i> Redis</span>
+      <span><i class="fa-brands fa-connectdevelop"></i> Kafka</span>
+      <span><i class="devicon-mysql-plain"></i> MySQL</span>
+      <span><i class="devicon-mongodb-plain"></i> MongoDB</span>
+      <span><i class="devicon-amazonwebservices-plain"></i> AWS</span>
+      <span><i class="devicon-postman-plain"></i> Postman</span>
+      <span><i class="devicon-github-original"></i> GitHub</span>
+      <span><i class="fa-solid fa-code"></i> Data Structures & Algorithms</span>
+    </div>
+  </section>
+  
+  
+  
+  <!-- Projects Section -->
+  <section id="projects" class="section projects">
+    <h2>Projects</h2>
+    <div class="projects-container">
+      <div class="project-card" *ngFor="let project of projects">
+        <img [src]="project.image" [alt]="project.title" class="project-img" />
+        <h3>{{ project.title }}</h3>
+        <p>{{ project.summary }}</p>
+        <p><strong>Tech Stack:</strong> {{ project.techStack }}</p>
+        <a [href]="project.link" target="_blank" class="btn">View Project</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Resume Section -->
+  <section id="resume" class="section resume">
+    <h2>Resume</h2>
+    <p>Looking for a Passionate Developer? Here’s My Resume!🔥</p>
+    <div class="socials">
+      <button class="but1" (click)="downloadResume()">
+        <i class="fas fa-download"></i> Resume
+      </button>
+    </div>
+  </section>
+  
+
+  <!-- Contact Section -->
+  <section id="contact" class="section contact">
+    <h2>Contact Me</h2>
+    <p>Let's connect! Reach out to me via social media or email.</p>
+    <div class="socials">
+      <a href="tel:+1234567890"><i class="fas fa-phone"></i></a>
+      <a href="https://github.com/suranjanachary" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/suranjan-achary-8b27b7174/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:suranjan.achary@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
+  </section>
+
+  
+</div>

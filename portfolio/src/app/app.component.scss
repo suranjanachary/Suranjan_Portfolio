@@ -1,0 +1,349 @@
+/* General Styles */
+.portfolio-container {
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+  } 
+  .but1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* Space between icon and text */
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background: #007bff; /* Primary blue color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+  
+    i {
+      font-size: 18px; /* Adjust icon size */
+    }
+  
+    &:hover {
+      background: #0056b3; /* Darker shade on hover */
+    }
+  
+    &:active {
+      transform: scale(0.95); /* Button press effect */
+    }
+  
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.7);
+    }
+  }
+  
+  /* Navbar (Desktop) */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #333;
+    color: white;
+    padding: 10px 20px;
+    padding-right: 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  
+    .logo {
+      display: flex;
+      align-items: center;
+
+      .logo-text {
+        font-size: 20px;
+        font-weight: bold;
+        color: #007bff;
+      }
+    }
+    ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      padding: 0;
+      margin: 0;
+      padding-right: 50px;
+  
+      li {
+        display: inline;
+      }
+  
+      a {
+        text-decoration: none;
+        color: white;
+        font-size: 16px;
+        padding: 8px;
+      }
+    }
+  }
+  /* Logo (Left Aligned) */
+.logo {
+  display: flex;
+  align-items: left;
+
+  .logo-text {
+    font-size: 20px;
+    font-weight: bold;
+    color: #007bff;
+  }
+}
+
+/* Navigation Links (Right Aligned) */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin-right: 50px;
+  padding: 0;
+  padding-right: 20px;
+  flex-wrap: wrap;
+
+  li {
+    display: inline;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background: #007bff;
+      color: white;
+      transform: scale(1.1);
+    }
+  }
+}
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+  /* Sidebar (Mobile) */
+  .sidebar {
+    position: fixed;
+    justify-content: left;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background: #222;
+    color: white;
+    padding-top: 20px;
+    transition: left 0.3s ease;
+    z-index: 1100;
+  
+    ul {
+      list-style: none;
+      padding: 10px;
+  
+      li {
+        padding: 10px;
+        text-align: center;
+      }
+  
+      a {
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+        display: block;
+        padding: 10px;
+      }
+    }
+  }
+
+  
+  /* Show Sidebar */
+  .sidebar.open {
+    left: 0;
+  }
+  
+  /* Close Button */
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  /* Hamburger Menu Button */
+  .menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+  }
+  
+/* General Center Alignment for Sections */
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* ✅ Centers content horizontally */
+    text-align: center; /* ✅ Centers text inside sections */
+    padding: 100px 20px;
+  }
+  
+  .about-content {
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    gap: 20px;
+    text-align: center; 
+  }
+  
+  /* Profile Picture */
+  img.profile-pic {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #007bff;
+  }
+  
+  /* Center Align Skills */
+  .skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* ✅ Centers skills horizontally */
+    gap: 10px;
+  
+    span {
+      background: #ddd;
+      padding: 8px 12px;
+      border-radius: 5px;
+    }
+  }
+  
+  /* Center Align Projects */
+  .projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* ✅ Centers project cards */
+    gap: 20px;
+  }
+  
+  /* Center Align Contact */
+  /* Social Icons */
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+
+  a {
+    font-size: 24px; /* Adjust icon size */
+    color: #007bff; /* Icon color */
+    transition: color 0.3s ease;
+    
+    &:hover {
+      color: #0056b3; /* Darker shade on hover */
+    }
+  }
+}
+
+  /* Center Align Contact */
+  .resume {
+    display: flex;
+    justify-content: center; /* ✅ Centers social icons */
+    gap: 20px;
+  }
+  
+  /* Skills */
+  .skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  
+    span {
+      background: #ddd;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+  }
+  
+  /* Projects */
+  .projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .project-card {
+    width: 300px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+  
+    img {
+      width: 100%;
+      border-radius: 10px;
+    }
+  
+    .btn {
+      display: block;
+      background: #007bff;
+      color: white;
+      padding: 8px;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+  }
+  
+  /* Contact */
+  .socials a {
+    margin-right: 15px;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  /* 📱 Responsive Design */
+  @media screen and (max-width: 768px) {
+    .navbar{
+      justify-content: left;
+    }
+    .navbar ul {
+      display: none;
+    }
+  
+    .menu-btn {
+      display: block;
+    }
+    .about-content {
+        flex-direction: column; 
+        text-align: left; 
+        justify-content: center; 
+      }
+    img.profile-pic {
+        width: 200px;
+        height: 200px;
+      }
+      .nav-links {
+        display: none;
+      }
+    
+      .menu-btn {
+        display: block;
+      }
+  }
+
+  
+  
