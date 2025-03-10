@@ -13,7 +13,7 @@
     font-size: 16px;
     font-weight: bold;
     color: white;
-    background: #007bff; /* Primary blue color */
+    background: #30a8ac; /* Primary blue color */
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -59,7 +59,7 @@
       .logo-text {
         font-size: 20px;
         font-weight: bold;
-        color: #007bff;
+        color: #30a8ac;
       }
     }
     ul {
@@ -90,7 +90,7 @@
   .logo-text {
     font-size: 20px;
     font-weight: bold;
-    color: #007bff;
+    color: #30a8ac;
   }
 }
 
@@ -117,7 +117,7 @@
     transition: all 0.3s ease-in-out;
 
     &:hover {
-      background: #007bff;
+      background: #30a8ac;
       color: white;
       transform: scale(1.1);
     }
@@ -216,22 +216,9 @@
     height: 350px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid #007bff;
+    border: 3px solid #30a8ac;
   }
   
-  /* Center Align Skills */
-  .skill-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* ✅ Centers skills horizontally */
-    gap: 10px;
-  
-    span {
-      background: #ddd;
-      padding: 8px 12px;
-      border-radius: 5px;
-    }
-  }
   
   /* Center Align Projects */
   .projects-container {
@@ -250,7 +237,7 @@
 
   a {
     font-size: 24px; /* Adjust icon size */
-    color: #007bff; /* Icon color */
+    color: #30a8ac; /* Icon color */
     transition: color 0.3s ease;
     
     &:hover {
@@ -273,7 +260,7 @@
     gap: 10px;
   
     span {
-      background: #ddd;
+      background: #30a8ac;
       padding: 5px 10px;
       border-radius: 5px;
     }
@@ -300,7 +287,7 @@
   
     .btn {
       display: block;
-      background: #007bff;
+      background: #30a8ac;
       color: white;
       padding: 8px;
       text-decoration: none;

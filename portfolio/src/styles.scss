@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+/* Light Mode (Default) */
+body {
+    background: #ffffff;
+    color: #333;
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  /* Dark Mode */
+  body.dark-theme {
+    background: #1e1e1e;
+    color: #ffffff;
+  }
+  
+  /* Theme Toggle Button */
+  .theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: inherit;
+  }
+  
+  .theme-toggle i {
+    transition: transform 0.3s;
+  }
+  
+  .theme-toggle:hover i {
+    transform: rotate(20deg);
+  }
+  

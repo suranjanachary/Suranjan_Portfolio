@@ -8,6 +8,11 @@
       <li><a href="#projects" (click)="toggleSidebar()">Projects</a></li>
       <li><a href="#resume" (click)="toggleSidebar()">Resume</a></li>
       <li><a href="#contact" (click)="toggleSidebar()">Contact</a></li>
+      <li>
+        <a (click)="toggleTheme()">
+          <i [ngClass]="isDarkMode ? 'fa-solid fa-sun' : 'fa-solid fa-moon'"></i>
+        </a>
+      </li>
     </ul>
   </div>
 
@@ -23,6 +28,11 @@
       <li><a href="#projects">Projects</a></li>
       <li><a href="#resume">Resume</a></li>
       <li><a href="#contact">Contact</a></li>
+      <li>
+        <a (click)="toggleTheme()">
+          <i [ngClass]="isDarkMode ? 'fa-solid fa-sun' : 'fa-solid fa-moon'"></i>
+        </a>
+      </li>
     </ul>
   </nav>
   

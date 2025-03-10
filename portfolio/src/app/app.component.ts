@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ThemeService } from './theme.service';
 
 @Component({
   selector: 'app-root',
@@ -9,8 +10,18 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  isDarkMode: boolean = false;
+
+  constructor(private themeService: ThemeService) {
+    this.isDarkMode = this.themeService.isDarkMode;
+
+  }
   isSidebarOpen = false; // Sidebar state
 
+  toggleTheme() {
+    this.themeService.toggleTheme();
+    this.isDarkMode = this.themeService.isDarkMode;
+  }
   toggleSidebar() {
     this.isSidebarOpen = !this.isSidebarOpen;
   }
