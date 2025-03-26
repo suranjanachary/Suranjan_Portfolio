@@ -304,8 +304,9 @@
   /* Skills */
   .skill-list {
     display: flex;
+    max-width: 700px;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 20px;
   
     span {
       background: #30a8ac;
