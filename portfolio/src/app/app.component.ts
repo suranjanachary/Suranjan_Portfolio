@@ -1,22 +1,40 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ThemeService } from './theme.service';
-
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   isDarkMode: boolean = false;
+  contactForm!: FormGroup;
 
-  constructor(private themeService: ThemeService) {
+  constructor(private themeService: ThemeService, private fb: FormBuilder) {
     this.isDarkMode = this.themeService.isDarkMode;
 
+    this.createForm();
   }
-  isSidebarOpen = false; // Sidebar state
+
+  createForm() {
+    this.contactForm = this.fb.group({ 
+      name: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      message: ['', Validators.required]
+    });
+  }
+
+  onSubmit() {
+    if (this.contactForm.valid) {
+      alert('Your message has been sent successfully!');
+      this.contactForm.reset();
+    }
+  }
+
+  isSidebarOpen = false;
 
   toggleTheme() {
     this.themeService.toggleTheme();

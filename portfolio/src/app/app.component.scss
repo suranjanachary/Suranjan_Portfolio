@@ -9,8 +9,8 @@
     align-items: center;
     justify-content: center;
     gap: 8px; /* Space between icon and text */
-    padding: 12px 20px;
-    font-size: 16px;
+    padding: 6px 10px;
+    font-size: 14px;
     font-weight: bold;
     color: white;
     background: #30a8ac; /* Primary blue color */
@@ -18,14 +18,13 @@
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
-    text-transform: uppercase;
-  
+    text-transform:capitalize;
     i {
       font-size: 18px; /* Adjust icon size */
     }
   
     &:hover {
-      background: #0056b3; /* Darker shade on hover */
+      background: #316568; /* Darker shade on hover */
     }
   
     &:active {
@@ -201,6 +200,55 @@
     text-align: center; /* ✅ Centers text inside sections */
     padding: 100px 20px;
   }
+
+  /* Home Section Layout */
+.home-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px;
+}
+
+/* Left Content */
+.home-content {
+  flex: 1;
+  text-align: left;
+}
+
+/* Right Image */
+.home-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.home-image img {
+  max-width: 350px; /* Adjust size */
+  // border-radius: 50%;
+  // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.homeSocials {
+  display: flex;
+  justify-content: left;
+  gap: 20px;
+
+  a {
+    font-size: 24px; /* Adjust icon size */
+    color: #235658; /* Icon color */
+    transition: color 0.3s ease;
+    
+    &:hover {
+      color: #2faab1; /* Darker shade on hover */
+    }
+  }
+}
+.homeSocials a {
+  margin-right: 15px;
+  text-decoration: none;
+  font-size: 18px;
+}
   
   .about-content {
     display: flex;
@@ -301,9 +349,77 @@
     text-decoration: none;
     font-size: 18px;
   }
+  .contact-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    // max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px;
+    gap: 50px; /* Space between two sections */
+  }
   
+  /* Left Side: Contact Info */
+  .contact-info {
+    flex: 1;
+    text-align: left;
+  }
+  
+  /* Social Links Styling */
+  .socials {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .socials a {
+    font-size: 24px;
+    color: #235658;
+    transition: color 0.3s ease;
+  }
+  
+  .socials a:hover {
+    color: #2faab1;
+  }
+  
+  /* Right Side: Contact Form */
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 500px;
+  }
+  
+  .input-group input,
+  .input-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .submit-btn {
+    background-color: #2faab1;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  
+  .submit-btn:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+  }
   /* 📱 Responsive Design */
   @media screen and (max-width: 768px) {
+    body, html {
+      overflow-x: hidden; /* Hide horizontal scrollbar */
+      width: 100%;
+    }
     .navbar{
       justify-content: left;
     }
@@ -316,8 +432,47 @@
     }
     .about-content {
         flex-direction: column; 
+        align-items: center;
+        justify-content: space-between;
+      }
+      
+      .home-container {
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 50px;
+        box-sizing: border-box;
+      }
+    
+      .home-content {
+        order: 1; 
         text-align: left; 
-        justify-content: center; 
+        padding: 20px;
+      }
+    
+      .home-image {
+        order: 2; 
+        margin-top: 20px;
+        
+      }
+    
+      .home-image img {
+        max-width: 250px;
+      }
+    
+      .homeSocials {
+        justify-content: center;
+      }
+
+      .section {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* ✅ Centers content horizontally */
+        text-align: center; /* ✅ Centers text inside sections */
+        padding: 20px 10px;
       }
     img.profile-pic {
         width: 200px;

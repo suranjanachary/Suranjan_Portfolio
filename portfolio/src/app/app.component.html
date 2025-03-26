@@ -3,10 +3,15 @@
   <div class="sidebar" [class.open]="isSidebarOpen">
     <button class="close-btn" (click)="toggleSidebar()">✖</button>
     <ul>
+      <li><a href="#home" (click)="toggleSidebar()">Home</a></li>
       <li><a href="#about" (click)="toggleSidebar()">About Me</a></li>
       <li><a href="#skills" (click)="toggleSidebar()">Skills</a></li>
       <li><a href="#projects" (click)="toggleSidebar()">Projects</a></li>
-      <li><a href="#resume" (click)="toggleSidebar()">Resume</a></li>
+      <!-- <li><button class="but1" (click)="downloadResume()">
+          <i class="fas fa-download"></i> Resume
+        </button>
+      </li> -->
+      <li><a href="#resume" (click)="downloadResume()">Resume</a></li>
       <li><a href="#contact" (click)="toggleSidebar()">Contact</a></li>
       <li>
         <a (click)="toggleTheme()">
@@ -23,11 +28,16 @@
       <span class="logo-text">Suranjan</span>
     </div>
     <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
       <li><a href="#about">About Me</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
-      <li><a href="#resume">Resume</a></li>
       <li><a href="#contact">Contact</a></li>
+      <li>
+        <button class="but1" (click)="downloadResume()">
+          <i class="fas fa-download"></i> Resume
+        </button>
+      </li>
       <li>
         <a (click)="toggleTheme()">
           <i [ngClass]="isDarkMode ? 'fa-solid fa-sun' : 'fa-solid fa-moon'"></i>
@@ -37,19 +47,41 @@
   </nav>
   
 
-  <!-- About Me Section -->
+<!-- Home Section -->
+<section id="home" class="section about">
+  <div class="home-container">
+    
+    <div class="home-content">
+      <h1>Hello, I'm <span class="highlight">Suranjan Achary</span> 😊</h1>
+      <h3>I'm a Full Stack Developer who enjoys designing creative and delightful experiences.</h3>
+
+      <div class="homeSocials">
+        <a href="https://github.com/suranjanachary" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/suranjan-achary-8b27b7174/" target="_blank">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="mailto:suranjan.achary@gmail.com">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+    </div>
+    <div class="home-image">
+      <img src="https://img.freepik.com/free-vector/hand-coding-concept-illustration_114360-8173.jpg?ga=GA1.1.117542238.1742992211&semt=ais_hybrid" alt="Suranjan Achary">
+    </div>
+  </div>
+</section>
+
  <!-- About Me Section -->
 <section id="about" class="section about">
   <div class="about-content">
     <img src="https://suranjan-achary-portfolio.netlify.app/ProPic.JPG" alt="My Photo" class="profile-pic" />
     <div>
-      <h1>Hello 👋, I'm <span class="highlight">Suranjan Achary</span></h1>
-      <h3>(Full Stack Web Developer)</h3>
+      <h1>I'm <span class="highlight">Suranjan Achary</span></h1>
       <p>
-        A passionate and results-driven Software Developer with 2 years of experience specializing in Java, Spring Boot, Angular, SQL, and REST APIs. 
-        <br>  
+        A passionate and results-driven Full Stack Web Developer with 2 years of experience specializing in Java, Spring Boot, Angular, SQL, and REST APIs. 
         Proficient in developing scalable backend solutions and dynamic front-end interfaces, ensuring seamless user experiences. Skilled in problem-solving, system design, and full-stack application development, with a strong understanding of modern software architectures. 
-        <br>  
         Always eager to learn, adapt, and innovate, I thrive in collaborative environments and am committed to building efficient, user-centric applications. Looking forward to taking on new challenges and expanding my expertise in cutting-edge technologies.
       </p>
     </div>
@@ -96,7 +128,7 @@
   </section>
 
   <!-- Resume Section -->
-  <section id="resume" class="section resume">
+  <!-- <section id="resume" class="section resume">
     <h2>Resume</h2>
     <p>Looking for a Passionate Developer? Here’s My Resume!🔥</p>
     <div class="socials">
@@ -104,20 +136,39 @@
         <i class="fas fa-download"></i> Resume
       </button>
     </div>
-  </section>
+  </section> -->
   
 
   <!-- Contact Section -->
   <section id="contact" class="section contact">
     <h2>Contact Me</h2>
     <p>Let's connect! Reach out to me via social media or email.</p>
-    <div class="socials">
-      <a href="tel:+918270077244"><i class="fas fa-phone"></i></a>
-      <a href="https://github.com/suranjanachary" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://www.linkedin.com/in/suranjan-achary-8b27b7174/" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="mailto:suranjan.achary@gmail.com"><i class="fas fa-envelope"></i></a>
+  
+    <div class="contact-container">
+      <!-- Left Side: Contact Info & Social Links -->
+      <div class="contact-info">
+        <div class="socials">
+          <a href="tel:+918270077244"><i class="fas fa-phone"></i></a>
+          <a href="https://github.com/suranjanachary" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/suranjan-achary-8b27b7174/" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="mailto:suranjan.achary@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+  
+      <!-- Right Side: Contact Form -->
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+        <div class="input-group">
+          <input type="text" formControlName="name" placeholder="Your Name" required />
+        </div>
+        <div class="input-group">
+          <input type="email" formControlName="email" placeholder="Your Email" required />
+        </div>
+        <div class="input-group">
+          <textarea formControlName="message" rows="4" placeholder="Your Message" required></textarea>
+        </div>
+        <button type="submit" class="submit-btn" [disabled]="contactForm.invalid">Send Message</button>
+      </form>
     </div>
   </section>
-
   
 </div>
