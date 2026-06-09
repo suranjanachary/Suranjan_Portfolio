@@ -44,7 +44,7 @@ export class AppComponent {
     this.isSidebarOpen = !this.isSidebarOpen;
   }
   downloadResume() {
-    const resumeUrl = "assets/pdf/Suranjan-Achary-Resume.pdf"; // Relative path
+    const resumeUrl = "assets/pdf/Suranjan-Achary-Resume-3YOE.pdf"; // Relative path
   
     // Open in a new tab
     const newTab = window.open(resumeUrl, "_blank");
@@ -55,7 +55,7 @@ export class AppComponent {
     // Force download
     const link = document.createElement("a");
     link.href = resumeUrl;
-    link.download = "Suranjan-Achary-Resume.pdf"; // Set download filename
+    link.download = "Suranjan-Achary-Resume-YOE.pdf"; // Set download filename
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
