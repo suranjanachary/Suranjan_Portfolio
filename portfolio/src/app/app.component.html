@@ -76,13 +76,11 @@
  <!-- About Me Section -->
 <section id="about" class="section about">
   <div class="about-content">
-    <img src="https://suranjan-achary-portfolio.netlify.app/ProPic.JPG" alt="My Photo" class="profile-pic" />
+    <img src="https://avatars.githubusercontent.com/u/101392637?s=400&u=64b854e0ab71d24168e0e44234ed19de60c2a10e&v=4" alt="My Photo" class="profile-pic" />
     <div>
       <h1>I'm <span class="highlight">Suranjan Achary</span></h1>
       <p>
-        A passionate and results-driven Full Stack Web Developer with 2 years of experience specializing in Java, Spring Boot, Angular, SQL, and REST APIs. 
-        Proficient in developing scalable backend solutions and dynamic front-end interfaces, ensuring seamless user experiences. Skilled in problem-solving, system design, and full-stack application development, with a strong understanding of modern software architectures. 
-        Always eager to learn, adapt, and innovate, I thrive in collaborative environments and am committed to building efficient, user-centric applications. Looking forward to taking on new challenges and expanding my expertise in cutting-edge technologies.
+        Full-Stack Developer with 3+ years of experience building enterprise web applications using Java 17, Spring Boot, React, and Angular. Experienced in developing secure REST APIs with JWT/OAuth2 and RBAC and building reusable IBM Carbon UI components that reduced repetitive frontend effort by 20%. Worked on API optimization, deployment automation using Docker and GitHub Actions, and supporting applications used by thousands of users across enterprise workflows.
       </p>
     </div>
   </div>
@@ -92,22 +90,11 @@
   <!-- Skills Section -->
   <section id="skills" class="section skills">
     <h2>Skills & Technologies</h2>
-    <div class="skill-list">
-      <span><i class="devicon-java-plain"></i> Java</span>
-      <span><i class="devicon-angularjs-plain"></i> Angular</span>
-      <span><i class="devicon-html5-plain"></i> HTML</span>
-      <span><i class="devicon-css3-plain"></i> CSS</span>
-      <span><i class="devicon-javascript-plain"></i> JavaScript</span>
-      <span><i class="devicon-spring-plain"></i> Spring Boot</span>
-      <span><i class="devicon-hibernate-plain"></i> Hibernate</span>
-      <span><i class="fa-solid fa-database"></i> Redis</span>
-      <span><i class="fa-brands fa-connectdevelop"></i> Kafka</span>
-      <span><i class="devicon-mysql-plain"></i> MySQL</span>
-      <span><i class="devicon-mongodb-plain"></i> MongoDB</span>
-      <span><i class="devicon-amazonwebservices-plain"></i> AWS</span>
-      <span><i class="devicon-postman-plain"></i> Postman</span>
-      <span><i class="devicon-github-original"></i> GitHub</span>
-      <span><i class="fa-solid fa-code"></i> Data Structures & Algorithms</span>
+    <div class="skills-grid">
+      <div class="skill-category" *ngFor="let category of skillCategories">
+        <h3>{{ category.title }}</h3>
+        <p>{{ category.skills }}</p>
+      </div>
     </div>
   </section>
   
@@ -120,9 +107,13 @@
       <div class="project-card" *ngFor="let project of projects">
         <img [src]="project.image" [alt]="project.title" class="project-img" />
         <h3>{{ project.title }}</h3>
-        <p>{{ project.summary }}</p>
+        <p class="project-meta">{{ project.company }} | {{ project.location }}</p>
+        <p class="project-period">{{ project.period }}</p>
+        <ul class="project-highlights">
+          <li *ngFor="let highlight of project.highlights">{{ highlight }}</li>
+        </ul>
         <p><strong>Tech Stack:</strong> {{ project.techStack }}</p>
-        <a [href]="project.link" target="_blank" class="btn">View Project</a>
+        <a *ngIf="project.link" [href]="project.link" target="_blank" class="btn">View Project</a>
       </div>
     </div>
   </section>
